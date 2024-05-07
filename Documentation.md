@@ -17,3 +17,20 @@ aquele tempo extra precisando contruir APIS em JS vou poder pensar e elaborar me
 minha lógica usando o PHP. Alguns dos bonús é que não preciso me proecupar com alteração da estrutura
 do laravel o que me garante que não vou ter dor de cabeça com algo funcionando errado, ou seja
 continuarei usando o bom MVC do laravel sem problemas.
+
+## VUE
+Desenvolvimento rápido e simples com baix complexidade e alta dinamicicidade. Alta integração com laravel assim
+busca de exemplos e ajuda se torna mais simples
+
+## TAILWIND 
+Rapidez no desenvolvimento;
+
+
+## FACADE
+Criei uma facade pois assim consigo usar ela no meu sistema como um todo o que evita que precise repetir código
+
+## SERVICE-PROVIDER E FACEDES DISTINTOS?
+Criei arquivos distintos para manter a responsabilidade única para cada serviço, pois se mudar a uri da api
+é só alter em um único arquivo
+
+
