@@ -2,14 +2,33 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Services\DeliveryService;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
 class DeliveryController extends Controller
 {
-    //controller entrega
-    public function __invoke()
+
+    protected $deliveryService;
+
+    public function __construct(DeliveryService $deliveryService)
     {
-        return Http::get('https://run.mocky.io/v3/6334edd3-ad56-427b-8f71-a3a395c5a0c7')->json();
+        $this->deliveryService = $deliveryService;
+    }
+
+    //controller entrega
+
+    public function searchDeliveryByCPF(Request $request)  
+    {
+        try{
+
+            $post = $request->all();
+
+            $result = $this->deliveryService->searchDeliveryByCPF($post['cpf']);
+
+        }catch(Exception $e){
+            return $e;
+        }
     }
 }

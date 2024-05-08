@@ -33,4 +33,12 @@ Criei uma facade pois assim consigo usar ela no meu sistema como um todo o que e
 Criei arquivos distintos para manter a responsabilidade única para cada serviço, pois se mudar a uri da api
 é só alter em um único arquivo
 
+## INSTANCIAR A SERVICE NO CONTRUCT:
+Injeção de Dependência: Ao injetar o serviço no construtor do controlador, você está seguindo o princípio da injeção de dependência, o que promove o desacoplamento de classes. Isso significa que o controlador não precisa saber como instanciar o serviço, apenas precisa receber uma instância já existente. Isso simplifica o código e facilita a manutenção.
+Facilidade de Testes: Injetar o serviço torna mais fácil testar o controlador. Durante os testes, você pode facilmente substituir o serviço real por um serviço de simulação ou um objeto de dublê (mock) para controlar o comportamento do serviço e isolar o teste do controlador.
+Reutilização de Código: Ao usar um serviço separado, você promove a reutilização de código. Se houver lógica relacionada a entregas em outros controladores ou partes do aplicativo, você pode reutilizar o mesmo serviço em vez de duplicar o código.
+Manutenção e Escalabilidade: Separar a lógica de negócios em serviços torna o código mais organizado e fácil de entender. Isso facilita a manutenção e escalabilidade do aplicativo, pois você pode modificar ou adicionar funcionalidades em um único local (o serviço) sem precisar alterar vários controladores.
+
+
+
 

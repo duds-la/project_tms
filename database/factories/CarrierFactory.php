@@ -17,7 +17,9 @@ class CarrierFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'company_name' => $this->faker->name,
+            'cnpj' => $this->faker->unique()->numerify('##########'),
+            'uuid' => $this->faker->uuid,
         ];
     }
 }

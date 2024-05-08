@@ -14,4 +14,5 @@ class CarrierController extends Controller
         return ApiCarrier::get('6334edd3-ad56-427b-8f71-a3a395c5a0c7')->json();
     }
 
+    
 }

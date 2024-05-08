@@ -18,7 +18,7 @@ class RecipientFactory extends Factory
     {
         return [
             'name' => $this->faker->name,
-            'cpf' => $this->faker->unique()->cpf,
+            'cpf' => $this->faker->unique()->numerify('##########'),
             'address' => $this->faker->address,
             'state' => $this->faker->state,
             'cep' => $this->faker->postcode,
