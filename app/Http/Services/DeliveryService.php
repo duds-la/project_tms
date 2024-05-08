@@ -4,7 +4,7 @@ namespace App\Http\Services;
 
 use App\Facades\ApiDelivery;
 use App\Models\Recipient;
-use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 
 class DeliveryService
@@ -23,7 +23,7 @@ class DeliveryService
         return $deliveries;
     }
 
-    public static function searchRecipientByCpfOnDb($cpf)
+    public static function searchRecipientByCpfOnDb($cpf) : Collection
     {
         $search = DB::table('deliveries')
         ->join('recipients', 'deliveries.recipient_id', '=', 'recipients.id')
@@ -34,7 +34,7 @@ class DeliveryService
         return $search;
     }
 
-    public static function searchRecipientByCpfOnApi($cpf)
+    public static function searchRecipientByCpfOnApi($cpf) : Collection
     {
         
         $apiResponse = ApiDelivery::get('6334edd3-ad56-427b-8f71-a3a395c5a0c7')->json();
