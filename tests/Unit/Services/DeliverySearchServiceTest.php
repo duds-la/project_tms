@@ -56,5 +56,18 @@ class DeliverySearchServiceTest extends TestCase
         $this->assertEquals($recipient->cpf, $deliveries[0]['_destinatario']['_cpf']);
     }
 
-    
+    /** @test */
+    public function it_can_search_recipient_without_cpf_on_db()
+    {
+       
+        $recipient = Recipient::factory()->create();
+        $carrier = Carrier::factory()->create();
+        $sender = Sender::factory()->create();
+        $delivery = Delivery::factory()->create();
+
+        $service = new DeliverySearchService();
+        $deliveries = $service->queryRecipientWithoutFilterByCpf();
+
+        $this->assertNotEmpty($deliveries);
+    }
 }
