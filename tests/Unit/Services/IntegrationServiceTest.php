@@ -63,9 +63,9 @@ class IntegrationServiceTest extends TestCase
         $integration = $service->integrationDelivery($filteredData);
 
         $this->assertEquals(1, Delivery::count());
-        
+
         $this->assertDatabaseHas('deliveries', [
-            '_id' => 'f1e7be5c-90f3-4b0a-a5ff-3a44941a5412'
+            'delivery_uuid' => 'f1e7be5c-90f3-4b0a-a5ff-3a44941a5412'
         ]);
     }
 
