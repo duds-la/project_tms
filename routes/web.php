@@ -11,6 +11,7 @@ Route::prefix('/delivery')->group(function () {
     Route::controller(DeliveryController::class)->group(function () {
         Route::get('/', 'viewIndexDeliveries')->name('delivery.index');
         Route::get('/search-by-cpf', 'searchDeliveryByCPF')->name('delivery.search-by-cpf');
+        Route::get('/details-about', 'detailsAboutDelivery')->name('delivery.deatils-about');
     });
 });
 

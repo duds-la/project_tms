@@ -13,6 +13,5 @@ import Table from './components/Table.vue';
 
 const { data_deliveries } = defineProps(['data_deliveries']);
 
-console.log(data_deliveries)
 
 </script>

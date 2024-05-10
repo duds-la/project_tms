@@ -1,6 +1,6 @@
 <template>
     <div class="bg-gray-200 w-full h-full rounded-xl p-10">
-        <div class="flex flex-row items-center justify-between gap-3">
+        <div class="flex md:flex-row  flex-col items-center justify-between gap-3 mb-10">
             <ButtonAllDeliveries />
             <SearchField class="flex-1" />
             <SearchFieldCarrier class="flex-1" />
@@ -44,7 +44,7 @@
                                 <td class="px-6 py-4">
                                     {{data_deliverie._id_transportadora}}
                                 </td>
-                                <td class="px-6 py-4 ">
+                                <td @click="datails(data_deliverie._id)" class="px-6 py-4">
                                     <i class="ri-expand-diagonal-line hover:text-xl hover:text-slate-50 duration-150 ease-in cursor-pointer"></i>
                                 </td>
                             </tr>
@@ -61,7 +61,12 @@
 import SearchField from './SearchField.vue';
 import SearchFieldCarrier from './SearchFieldCarrier.vue';
 import ButtonAllDeliveries from './ButtonAllDeliveries.vue';
+import { router } from "@inertiajs/vue3";
 
 const { data_deliveries } = defineProps(['data_deliveries']);
+
+function datails(id) {
+  router.get("/delivery/details-about/",{id:id});
+}
 
 </script>
