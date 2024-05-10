@@ -18,21 +18,9 @@ class DeliveryService
         return $deliveries;
     }
 
-    public static function storeIntegrationDelivery($filteredData) 
+    public static function storeIntegrationDelivery($data) 
     {
-
-        $integration = IntegrationService::integrationDelivery($filteredData);
-
-        return $integration;
+        
     }
-
-    public static function deliveriesListWithoutFilterByCpf() : Collection
-    {
-
-        $deliveries = DeliverySearchService::queryRecipientWithoutFilterByCpf();
-
-        return $deliveries;
-    }
-
 
 }

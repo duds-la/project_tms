@@ -5,10 +5,12 @@ use App\Http\Controllers\DeliveryController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
+Route::redirect('/', '/delivery');
 
-Route::prefix('delivery')->group(function () {
+Route::prefix('/delivery')->group(function () {
     Route::controller(DeliveryController::class)->group(function () {
-        Route::get('/search-delivery', 'searchDelivery');
+        Route::get('/', 'viewIndexDeliveries')->name('delivery.index');
+        Route::get('/search-by-cpf', 'searchDeliveryByCPF')->name('delivery.search-by-cpf');
     });
 });
 

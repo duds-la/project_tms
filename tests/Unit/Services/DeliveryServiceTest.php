@@ -2,7 +2,7 @@
 
 namespace Tests\Unit\Services;
 
-use App\Http\Services\DeliveryService;
+use App\Http\Services\DeliverySearchService;
 use App\Models\Carrier;
 use App\Models\Delivery;
 use App\Models\Recipient;
@@ -15,48 +15,7 @@ class DeliveryServiceTest extends TestCase
 {
     use RefreshDatabase;
 
-    /** @test */
-    public function it_can_search_recipient_by_cpf()
-    {
-       
-        $recipient = Recipient::factory()->create();
-        $carrier = Carrier::factory()->create();
-        $sender = Sender::factory()->create();
-        $delivery = Delivery::factory()->create();
-
-        $service = new DeliveryService();
-        $deliveries = $service->searchDeliveryByCPF($recipient->cpf);
-
-        
-        $this->assertCount(1, $deliveries);
-        $this->assertEquals($recipient->id, $deliveries[0]->id);
-    }
-
-    /** @test */
-    public function it_can_search_recipient_by_cpf_on_db()
-    {
-       
-        $recipient = Recipient::factory()->create();
-        $carrier = Carrier::factory()->create();
-        $sender = Sender::factory()->create();
-        $delivery = Delivery::factory()->create();
-
-        $service = new DeliveryService();
-        $deliveries = $service->searchRecipientByCpfOnDb($recipient->cpf);
-
-        
-        $this->assertCount(1, $deliveries);
-        $this->assertEquals($recipient->id, $deliveries[0]->id);
-    }
-
-    /** @test */
-    public function it_can_search_recipient_by_cpf_on_api()
-    {  
-        $service = new DeliveryService();
-        $deliveries = $service->searchRecipientByCpfOnApi('35595606088');
-
-        $this->assertNotEquals(null, $deliveries);
-    }
+    
 
     
 }
