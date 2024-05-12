@@ -11,12 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('carriers', function (Blueprint $table) {
-            $table->id();
-            $table->uuid('uuid')->unique();
-            $table->string('cnpj', 100)->unique();
-            $table->string('company_name');
-            $table->timestamps();
+        Schema::table('carriers', function (Blueprint $table) {
+            $table->index('uuid');
         });
     }
 
@@ -25,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('carriers');
+        Schema::table('carriers', function (Blueprint $table) {
+            $table->dropIndex(['uuid']);
+        });
     }
 };
