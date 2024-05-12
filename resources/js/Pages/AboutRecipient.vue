@@ -126,42 +126,76 @@
                     </div>
 
                     <div class="w-full px-3 mb-6 md:mb-0">
+                        <button @click="modalShow = true" type="button"
+                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        Ver Detalhes
+                        </button>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="flex flex-wrap -mx-3 mb-6">
+
+                    <div class="w-full mt-10 px-3 mb-10">
+                        <h2 class="text-white text-lg  mb-1">Transportadora <i class="ri-briefcase-5-line"></i></h2>
+                        <hr class="border-b-2 border-white" />
+                    </div>
+
+                    <div class="w-full px-3 mb-6 md:mb-0">
                         <label class="block uppercase tracking-wide text-white text-xs font-bold mb-2"
                             for="grid-first-name">
-                            Mensagem
+                            Nome Fantasia
                         </label>
                         <input
                             class="appearance-none block w-full bg-gray-200 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none"
-                            id="grid-first-name" type="text" :value="data_details[0].message" />
+                            id="grid-first-name" type="text" :value="data_details[0].company_name" />
                     </div>
                     <div class="w-full px-3 mb-6 md:mb-0">
                         <label class="block uppercase tracking-wide text-white text-xs font-bold mb-2"
                             for="grid-first-name">
-                            Data
+                            CNPJ
                         </label>
                         <input
                             class="appearance-none block w-full bg-gray-200 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none"
-                            id="grid-first-name" type="text" :value="data_details[0].date" />
+                            id="grid-first-name" type="text" :value="data_details[0].cnpj" />
                     </div>
                 </div>
             </div>
         </form>
+        <div v-if="modalShow" class="fixed inset-0 flex items-center justify-center bg-gray-700 bg-opacity-75">
+            <div class="bg-white p-8 rounded shadow-lg">
+                
+                <h2 class="text-xl font-bold mb-4">Rastreamento:</h2>
+                <div v-for="(item, index) in data_details[0].messages" :key="index" class="rounded-lg">
+                    <div class="bg-gray-200 p-8 m-2 rounded-lg">
+                        <p>STATUS : {{ item.message }}</p>
+                        <p>DATA : {{ item.date }}</p>
+                    </div>
+                </div>
+                
+                
+                <button @click="modalShow = false"
+                        class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    Fechar
+                </button>
+            </div>
+        </div>
     </div>
 
 </template>
 <script setup>
-import { router } from "@inertiajs/vue3";
+import { router } from '@inertiajs/vue3';
 import { ref, onMounted } from 'vue';
 
 const { data_details } = defineProps(["data_details"]);
 
 console.log(data_details)
 
-const cep = ref('');
 const mapUrl = ref('');
 
-
-
+const modalShow = ref(false);
 
 var geo_lat = data_details[0].geo_lat;
 var geo_lng = data_details[0].geo_lng;

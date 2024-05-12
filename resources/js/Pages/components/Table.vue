@@ -42,7 +42,7 @@
                                     {{data_deliverie._remetente._nome}}
                                 </td>
                                 <td class="px-6 py-4">
-                                    {{data_deliverie._id_transportadora}}
+                                    {{data_deliverie._nome_transportadora}}
                                 </td>
                                 <td @click="datails(data_deliverie._id)" class="px-6 py-4">
                                     <i class="ri-expand-diagonal-line hover:text-xl hover:text-slate-50 duration-150 ease-in cursor-pointer"></i>
