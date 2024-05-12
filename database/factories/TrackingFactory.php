@@ -18,9 +18,11 @@ class TrackingFactory extends Factory
      */
     public function definition(): array
     {
+        
         return [
             'message' => Str::of($this->faker->paragraph())->limit(30),
             'date' => $this->faker->date(),
+            'delivery_uuid' => $this->faker->uuid()
         ];
     }
 }

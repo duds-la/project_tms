@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Services\DeliverySearchService;
 use App\Http\Services\DeliveryService;
 use App\Models\Delivery;
 use Exception;
@@ -15,35 +16,61 @@ class DeliveryController extends Controller
 {
 
     //controller entrega
-    public function viewIndexDeliveries(Request $request)  : InertiaResponse
+    public function viewIndexDeliveries(Request $request, DeliverySearchService $deliverySearchService)  : InertiaResponse
     {
         try{
 
-            $deliveries = DeliveryService::deliveriesListWithoutFilterByCpf();
-            
+            $deliveries = $deliverySearchService->searchWithoutCPF();
+
             return Inertia::render('App',[
-                'deliveries' => $deliveries
+                'deliveries' => $deliveries,
+                'error' => null,
             ]);
 
         }catch(Exception $e){
-            return $e;
+            return Inertia::render('App', [
+                'deliveries' => null,
+                'error' => $e->getMessage()
+            ]);
         }
     }
 
-    public function searchDeliveryByCPF(Request $request) 
+    public function searchDeliveryByCPF(Request $request, DeliverySearchService $deliverySearchService) 
     {
         try{
 
             $post = $request->all();
 
-            $result = DeliveryService::deliveriesByCPF($post['cpf']);
+            $result = $deliverySearchService->searchByCPF($post['cpf']);
 
             return Inertia::render('App',[
-                'deliveries' => $result
+                'deliveries' => $result,
+                'error' => null,
+            ]);
+
+        }catch(Exception $e){
+            return Inertia::render('App', [
+                'deliveries' => null,
+                'error' => $e->getMessage()
+            ]);
+        }
+    }
+
+    public function detailsAboutDelivery(Request $request, DeliverySearchService $deliverySearchService) 
+    {
+        try{
+
+            $post = $request->all();
+
+            $result = $deliverySearchService->searchDeatilsDelivery($post['id']);
+
+            return Inertia::render('Details',[
+                'details' => $result
             ]);
 
         }catch(Exception $e){
             return $e;
         }
     }
+
 }

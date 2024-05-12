@@ -3,16 +3,33 @@
 namespace App\Http\Controllers;
 
 use App\Facades\ApiCarrier;
+use App\Http\Services\CarrierSearchService;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use Inertia\Inertia;
 
 class CarrierController extends Controller
 {
-    //controller transportadora
-    public function __invoke()
+    public function searchCarrierByName(Request $request, CarrierSearchService $carrierSearchService) 
     {
-        return ApiCarrier::get('6334edd3-ad56-427b-8f71-a3a395c5a0c7')->json();
-    }
+        try{
+            
+            $post = $request->all();
 
+            $result = $carrierSearchService->searchByName($post['name']);
+
+            return Inertia::render('App',[
+                'deliveries' => $result,
+                'error' => null
+            ]);
+
+        }catch(Exception $e){
+            return Inertia::render('App', [
+                'deliveries' => null,
+                'error' => $e->getMessage()
+            ]);
+        }
+    }
     
 }
