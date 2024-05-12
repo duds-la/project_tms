@@ -12,6 +12,14 @@ Route::prefix('/delivery')->group(function () {
         Route::get('/', 'viewIndexDeliveries')->name('delivery.index');
         Route::get('/search-by-cpf', 'searchDeliveryByCPF')->name('delivery.search-by-cpf');
         Route::get('/details-about', 'detailsAboutDelivery')->name('delivery.deatils-about');
+        Route::get('/details-message', 'detailsAboutMessage')->name('delivery.details-message');
+
+    });
+});
+
+Route::prefix('carrier')->group(function () {
+    Route::controller(CarrierController::class)->group(function () {
+        Route::get('/search-by-name', 'searchCarrierByName');
     });
 });
 
