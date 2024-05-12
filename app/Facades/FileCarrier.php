@@ -10,4 +10,9 @@ class FileCarrier extends Facade
     {
         return 'file-carrier';
     }
+
+    public static function loadFile($path)
+    {
+        return static::getFacadeRoot()($path);
+    }
 }
