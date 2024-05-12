@@ -10,19 +10,19 @@ use Illuminate\Validation\ValidationException;
 
 class IntegrationRecepientService
 {
-    public static function storeRecepient(Array $recipient_data)
+    public static function storeRecepient(Array $recipientData)
     {
         DB::beginTransaction();
         try {
             $recipient = new Recipient();
-            $recipient->name = $recipient_data['_nome'];
-            $recipient->cpf = $recipient_data['_cpf'];
-            $recipient->address = $recipient_data['_endereco'];
-            $recipient->state = $recipient_data['_estado'];
-            $recipient->cep = $recipient_data['_cep'];
-            $recipient->country = $recipient_data['_pais'];
-            $recipient->geo_lat = $recipient_data['_geolocalizao']['_lat'];
-            $recipient->geo_lng = $recipient_data['_geolocalizao']['_lng'];
+            $recipient->name = $recipientData['_nome'];
+            $recipient->cpf = $recipientData['_cpf'];
+            $recipient->address = $recipientData['_endereco'];
+            $recipient->state = $recipientData['_estado'];
+            $recipient->cep = $recipientData['_cep'];
+            $recipient->country = $recipientData['_pais'];
+            $recipient->geo_lat = $recipientData['_geolocalizao']['_lat'];
+            $recipient->geo_lng = $recipientData['_geolocalizao']['_lng'];
             $recipient->save();
 
             Log::info('Register create' . $recipient->id . 'on table recipients');
