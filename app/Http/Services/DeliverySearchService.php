@@ -47,29 +47,5 @@ class DeliverySearchService implements DeliverySearchInterface
         return $details;
     }
 
-    public static function searchRecipientByCpfOnApi($cpf)
-    {
-
-        $apiResponse = ApiDelivery::get('6334edd3-ad56-427b-8f71-a3a395c5a0c7')->json();
-
-        if (!isset($apiResponse)) {
-            $apiResponse = FileDelivery::loadFile('app/JsonFiles/API_LISTAGEM_ENTREGAS.json');
-        }
-
-        $dataCollection = collect($apiResponse['data']);
-
-        $filteredData = $dataCollection->filter(
-            function ($delivery) use ($cpf) {
-                return isset($delivery['_destinatario']['_cpf']) && $delivery['_destinatario']['_cpf'] === $cpf;
-            }
-        )
-            ->values();
-
-        if ($filteredData->isEmpty()) {
-
-            throw ValidationException::withMessages(['CPF não encontrado, por favor verifique os números inseridos!']);
-        }
-        
-    }
 
 }
