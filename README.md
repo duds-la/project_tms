@@ -19,6 +19,7 @@ Prepare-se para uma viagem cheia de emoções, risadas e sucesso! Junte-se a nó
 - [:computer: Vamos lá? :computer:](#computer-desafio-tms-computer)
   - [:point\_right: Sumário](#point_right-sumário)
   - [:rotating\_light: Como Executar?](#rotating_light-como-executar)
+  - [:question: Uso Básico](#question-uso-basico)
   - [:smile: Autores](#smile-autores)
 
 ## [:rotating_light: Como executar?](#rotating_light-como-executar)
@@ -82,7 +83,28 @@ sail artisan key:generate
 ```
 sail npm run dev
 ```
+## [:question: Uso Básico da Ferramenta](#question-uso-basico)
 
+### Primeiro Acesso:
+- Quando realizar o seu primeiro acesso a ferramenta, cairá nesa tela:
+![image](https://github.com/duds-la/project_tms/assets/110792669/e6ad0d19-ab15-4384-8c56-40fa90dd0d27)
+### Afinal o que seria um CPF válido??
+- No caminho abaixo exite dois arquivos, caso a API disponibilizada para consulta esteja fora do ar a aplicação fará a consulta nesses arquivos os retornando como o response da API, entrando no arquivo destacado terá uma lista de entregas com N valores pegue qualquer valor da chave **_cpf** e realize a busca
+![image](https://github.com/duds-la/project_tms/assets/110792669/350f99f1-10f8-4524-9884-884b8481ea60)
+### Após a primeira busca:
+- Após a sua primeira busca válida será exibido essa tela, nela você tem 4 ações possíveis: Ver todas as entregas, listar as entregas daquele CPF, filtrar por entregas já sinconizadas com a API buscando pelo nome da transportadora e vizualizar + dados sobre aquela entrega.
+![Captura de tela 2024-05-13 200441](https://github.com/duds-la/project_tms/assets/110792669/003d7546-b769-4f2d-82ab-687a0db8974e)
+### Vizualizando + detalhes:
+- Quando selecionado para ver + detalhes irá abrir uma tela com todas as informações daquela entrega, e será aberto um mini-mapa que utiliza da latitude e longitutde disponibilizadas na lista mencionada anteriormente para melhor ilustrar a localização
+![giphy](https://github.com/duds-la/project_tms/assets/110792669/3da6c40d-c34b-4721-9426-b9e00030772e)
+- Ainda nessa tela você tem a opção de ver o status da entrega, clicando nesse botão é aberto um modal que exibe as etapas:
+![Captura de tela 2024-05-13 200657](https://github.com/duds-la/project_tms/assets/110792669/7c5e7f35-8028-480e-9768-dfef98748eb4)
+![Captura de tela 2024-05-13 200701](https://github.com/duds-la/project_tms/assets/110792669/f2ddd863-5891-465a-8620-0397cb6a64bb)
+
+## [:sparkles: Tecnologias Usadas](#sparkles-tecnologias)
+
+### Docker:
+- Para gantir uma 
 
 ## [:smile: Autores](#smile-autores)
 
