@@ -46,42 +46,42 @@ Prepare-se para uma viagem cheia de emoções, risadas e sucesso! Junte-se a nó
   ```
 - Ajuste o .env.exemple para .env ou crie um [.env](https://laravel.com/docs/11.x/configuration)
 > O docker do projeto utiliza **MySql** caso queira utilizar outro banco de dados é necessário a modificação no arquivo **docker-compose.yml**
-- Após ajustar a parte do .env referente a conexão com seu banco de dados rode o seguinte comando:
+- Após ajustar a parte do .env referente a conexão com seu banco de dados rode o seguinte comando
 > Caso o comando **sail** não seja reconhecido use **./vendor/bin/sail**
   ```
   sail up --build
   ```
 - Pressione CTRL + C para parar, rode:
-  ```
-  sail up -d
-  ```
-  ```
-  sail artisan migrate
-  ```
+```
+sail up -d
+```
+```
+sail artisan migrate
+```
 - Se apresentar algum erro, rode:
-  ```
-  docker-compose down --volumes
-  ```
-  ```
-  sail up --build
-  ```
+```
+docker-compose down --volumes
+```
+```
+sail up --build
+```
 - Pressione CTRL + C para parar, rode:
-  ```
-  sail up -d
-  ```
-  ```
-  sail artisan migrate
-  ```
+```
+sail up -d
+```
+```
+sail artisan migrate
+```
 - Após rodar as migrations, rode:
-  ```
-  sail npm install
-  ```
-  ```
-  sail artisan key:generate
-  ```
-  ```
-  sail npm run dev
-  ```
+```
+sail npm install
+```
+```
+sail artisan key:generate
+```
+```
+sail npm run dev
+```
 
 
 ## [:smile: Autores](#smile-autores)
