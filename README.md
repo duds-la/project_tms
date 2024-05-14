@@ -90,7 +90,7 @@ sail npm run dev
 - Quando realizar o seu primeiro acesso a ferramenta, cairá nesa tela:
 ![image](https://github.com/duds-la/project_tms/assets/110792669/e6ad0d19-ab15-4384-8c56-40fa90dd0d27)
 ### Afinal o que seria um CPF válido??
-- No caminho abaixo exite dois arquivos, caso a API disponibilizada para consulta esteja fora do ar a aplicação fará a consulta nesses arquivos os retornando como o response da API, entrando no arquivo destacado terá uma lista de entregas com N valores pegue qualquer valor da chave **_cpf** e realize a busca
+- No caminho abaixo existe dois arquivos, caso a API disponibilizada para consulta esteja fora do ar a aplicação fará a consulta nesses arquivos os retornando como o response da API, entrando no arquivo destacado terá uma lista de entregas com N valores, pegue qualquer valor da chave **_cpf** e realize a busca
 ![image](https://github.com/duds-la/project_tms/assets/110792669/350f99f1-10f8-4524-9884-884b8481ea60)
 ### Após a primeira busca:
 - Após a sua primeira busca válida será exibido essa tela, nela você tem 4 ações possíveis: Ver todas as entregas, listar as entregas daquele CPF, filtrar por entregas já sinconizadas com a API buscando pelo nome da transportadora e vizualizar + dados sobre aquela entrega.
