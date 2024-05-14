@@ -20,6 +20,7 @@ Prepare-se para uma viagem cheia de emoções, risadas e sucesso! Junte-se a nó
   - [:point\_right: Sumário](#point_right-sumário)
   - [:rotating\_light: Como Executar?](#rotating_light-como-executar)
   - [:question: Uso Básico](#question-uso-basico)
+  - [:sparkles: Tecnologias](#smile-autores)
   - [:smile: Autores](#smile-autores)
 
 ## [:rotating_light: Como executar?](#rotating_light-como-executar)
@@ -103,9 +104,27 @@ sail npm run dev
 
 ## [:sparkles: Tecnologias Usadas](#sparkles-tecnologias)
 
-### Docker:
-- Para gantir uma 
-
+### <img src="https://www.docker.com/wp-content/uploads/2023/05/symbol_blue-docker-logo.png?size=50" width=50>
+> Docker
+- Para gantir uma padronização em diferentes ambientes e manter a versão de todas os recursos utilizados iguais para qualquer um que queira fazer parte do desenvolvimento
+    [documentação-docker](https://www.docker.com/)
+  
+### <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/800px-Laravel.svg.png?size=50" width=50>
+> Laravel
+- O laravel foi minha opção de escolha por conta dos recursos robustos que entrega em um tipo de arquitetura que gosto muito que é a MVC, junto também da ativa comunidade e de suas ultimas realeses.
+[documentação-laravel](https://laravel.com/)
+### <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1200px-Vue.js_Logo_2.svg.png?size=50" width=50>
+> VUE
+- Um framework javascript para componentização e construção de recursos SPA, que tem uma enorme integrabilidade com o laravel.
+[documentação-vue](https://vuejs.org/)
+### <img src="https://avatars.githubusercontent.com/u/47703742?s=200&v=4?size=50" width=50>
+> InertiaJs
+- Uma biblioteca javascript que permite a integração de um framework SPA com o laravel sem a construção de API's seguindo o MVC que o laravel tem por padrão
+[documentação-inertia-js](https://inertiajs.com/)
+### <img src="https://i0.wp.com/futuresolutionsonline.co.uk/wp-content/uploads/2023/04/mySQL-logo.png?fit=300%2C300&ssl=1?size=50" width=50>
+> Mysql
+- Um dos bancos de dados mais usados e difundidos attualmente, sem dizer na grande integração que possuí junto do laravel.
+[documentação-mysql](https://www.mysql.com/)
 ## [:smile: Autores](#smile-autores)
 
 | [<img src="https://github.com/duds-la.png?size=115" width=115><br><sub>@duds-la</sub>](https://github.com/duds-la) 
